@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bawarchi – Hyderabadi Style Biryani</title>
+
+  <!-- PREMIUM FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
-  <h1>Bawarchi</h1>
-  <p>Hyderabadi Style Dum Biryani</p>
+  <h1 class="brand">Bawarchi</h1>
+  <p class="subtitle">Hyderabadi Style Dum Biryani</p>
 </header>
 
 <main class="menu">
@@ -24,6 +28,14 @@
       <span>₹120</span>
     </div>
     <button onclick="addItem('Veg Manchurian')">Add</button>
+  </div>
+
+  <div class="menu-card">
+    <div>
+      <h3>Paneer 65</h3>
+      <span>₹160</span>
+    </div>
+    <button onclick="addItem('Paneer 65')">Add</button>
   </div>
 
   <div class="menu-card">
@@ -47,10 +59,18 @@
 
   <div class="menu-card">
     <div>
-      <h3>Mutton Biryani</h3>
+      <h3>Special Chicken Biryani</h3>
+      <span>₹280</span>
+    </div>
+    <button onclick="addItem('Special Chicken Biryani')">Add</button>
+  </div>
+
+  <div class="menu-card">
+    <div>
+      <h3>Mutton Dum Biryani</h3>
       <span>₹320</span>
     </div>
-    <button onclick="addItem('Mutton Biryani')">Add</button>
+    <button onclick="addItem('Mutton Dum Biryani')">Add</button>
   </div>
 
   <div class="menu-card">
@@ -61,9 +81,28 @@
     <button onclick="addItem('Veg Biryani')">Add</button>
   </div>
 
+  <!-- RICE & EXTRAS -->
+  <h2 class="section-title">🍚 Rice & Extras</h2>
+
+  <div class="menu-card">
+    <div>
+      <h3>Jeera Rice</h3>
+      <span>₹140</span>
+    </div>
+    <button onclick="addItem('Jeera Rice')">Add</button>
+  </div>
+
+  <div class="menu-card">
+    <div>
+      <h3>Extra Raita</h3>
+      <span>₹30</span>
+    </div>
+    <button onclick="addItem('Extra Raita')">Add</button>
+  </div>
+
 </main>
 
-<!-- WHATSAPP BAR -->
+<!-- WHATSAPP ORDER BAR -->
 <div class="order-bar">
   <span id="order-count">0 items</span>
   <button onclick="sendWhatsApp()">📩 Order on WhatsApp</button>
