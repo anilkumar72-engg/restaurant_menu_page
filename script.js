@@ -1,38 +1,40 @@
-// ===== CONFIG =====
-const OWNER_PHONE = "6300289099"; // replace with owner's WhatsApp number (no +, no spaces)
-
-// ===== ORDER STORAGE =====
+const OWNER_PHONE = "919876543210"; // replace with owner's WhatsApp number
 let order = {};
 
-// ===== ADD ITEM =====
-function addItem(itemName) {
-  if (order[itemName]) {
-    order[itemName]++;
+function addItem(item) {
+  if (order[item]) {
+    order[item]++;
   } else {
-    order[itemName] = 1;
+    order[item] = 1;
   }
-  alert(itemName + " added (" + order[itemName] + ")");
+  updateOrderCount();
 }
 
-// ===== SEND TO WHATSAPP =====
-function sendWhatsApp() {
-  const items = Object.keys(order);
+function updateOrderCount() {
+  const totalItems = Object.values(order).reduce((a, b) => a + b, 0);
+  document.getElementById("order-count").innerText =
+    totalItems + " item(s)";
+}
 
-  if (items.length === 0) {
+function sendWhatsApp() {
+  if (Object.keys(order).length === 0) {
     alert("Please add items to order");
     return;
   }
 
-  let message = "🛎 *New Order - Bawarchi*\n\n";
+  let message = "🍽 *New Order – Bawarchi*\n\n";
 
-  items.forEach((item, index) => {
-    message += `${index + 1}. ${item} × ${order[item]}\n`;
+  Object.keys(order).forEach((item, i) => {
+    message += `${i + 1}. ${item} × ${order[item]}\n`;
   });
 
   message += "\nThank you!";
 
-  const encodedMessage = encodeURIComponent(message);
-  const url = `https://wa.me/${OWNER_PHONE}?text=${encodedMessage}`;
+  const url =
+    "https://wa.me/" +
+    OWNER_PHONE +
+    "?text=" +
+    encodeURIComponent(message);
 
   window.open(url, "_blank");
 }
