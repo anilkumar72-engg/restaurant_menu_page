@@ -1,4 +1,5 @@
-const OWNER_PHONE = "916300289099"; // replace with owner's WhatsApp number
+const OWNER_PHONE = "916300289099"; // Bawarchi WhatsApp number (India)
+
 let order = {};
 
 function addItem(item) {
@@ -28,7 +29,7 @@ function sendWhatsApp() {
     message += `${i + 1}. ${item} × ${order[item]}\n`;
   });
 
-  message += "\nThank you!";
+  message += "\nPlease confirm. Thank you!";
 
   const url =
     "https://wa.me/" +
