@@ -1,5 +1,5 @@
 // ===== CONFIG =====
-const OWNER_PHONE = "919876543210"; // replace with owner's WhatsApp number (no +, no spaces)
+const OWNER_PHONE = "6300289099"; // replace with owner's WhatsApp number (no +, no spaces)
 
 // ===== ORDER STORAGE =====
 let order = {};
