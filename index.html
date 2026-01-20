@@ -9,17 +9,35 @@
 <body>
 
 <header class="hero">
-  <div class="hero-content">
-    <h1>Bawarchi</h1>
-    <p>Authentic Hyderabadi Dum Biryani</p>
-  </div>
+  <h1>Bawarchi</h1>
+  <p>Hyderabadi Style Dum Biryani</p>
 </header>
 
 <main class="menu">
 
-  <h2 class="section-title">🍗 Biryani</h2>
+  <!-- STARTERS -->
+  <h2 class="section-title">🥗 Starters</h2>
 
   <div class="menu-card">
+    <div>
+      <h3>Veg Manchurian</h3>
+      <span>₹120</span>
+    </div>
+    <button onclick="addItem('Veg Manchurian')">Add</button>
+  </div>
+
+  <div class="menu-card">
+    <div>
+      <h3>Chicken 65</h3>
+      <span>₹180</span>
+    </div>
+    <button onclick="addItem('Chicken 65')">Add</button>
+  </div>
+
+  <!-- BIRYANI -->
+  <h2 class="section-title">🍗 Biryani</h2>
+
+  <div class="menu-card highlight">
     <div>
       <h3>Chicken Dum Biryani</h3>
       <span>₹250</span>
@@ -45,7 +63,7 @@
 
 </main>
 
-<!-- STICKY WHATSAPP BAR -->
+<!-- WHATSAPP BAR -->
 <div class="order-bar">
   <span id="order-count">0 items</span>
   <button onclick="sendWhatsApp()">📩 Order on WhatsApp</button>
