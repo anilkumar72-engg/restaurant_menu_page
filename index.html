@@ -1,75 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bawarchi – Hyderabadi Style Biryani</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
-  <div class="overlay">
+  <div class="hero-content">
     <h1>Bawarchi</h1>
-    <p>Hyderabadi Style Biryani</p>
-    <button class="wa-btn" onclick="sendWhatsApp()">📩 Order on WhatsApp</button>
+    <p>Authentic Hyderabadi Dum Biryani</p>
   </div>
 </header>
 
 <main class="menu">
 
-  <section>
-    <h2>🍗 Biryani</h2>
+  <h2 class="section-title">🍗 Biryani</h2>
 
-    <div class="item">
-      <span>Chicken Dum Biryani</span>
-      <button onclick="addItem('Chicken Dum Biryani')">Add</button>
+  <div class="menu-card">
+    <div>
+      <h3>Chicken Dum Biryani</h3>
+      <span>₹250</span>
     </div>
+    <button onclick="addItem('Chicken Dum Biryani')">Add</button>
+  </div>
 
-    <div class="item">
-      <span>Mutton Biryani</span>
-      <button onclick="addItem('Mutton Biryani')">Add</button>
+  <div class="menu-card">
+    <div>
+      <h3>Mutton Biryani</h3>
+      <span>₹320</span>
     </div>
+    <button onclick="addItem('Mutton Biryani')">Add</button>
+  </div>
 
-    <div class="item">
-      <span>Veg Biryani</span>
-      <button onclick="addItem('Veg Biryani')">Add</button>
+  <div class="menu-card">
+    <div>
+      <h3>Veg Biryani</h3>
+      <span>₹160</span>
     </div>
-
-  </section>
+    <button onclick="addItem('Veg Biryani')">Add</button>
+  </div>
 
 </main>
 
-<footer>
-  <p>📍 Your Town • Main Road</p>
-  <p>Scan QR • Order via WhatsApp</p>
-</footer>
+<!-- STICKY WHATSAPP BAR -->
+<div class="order-bar">
+  <span id="order-count">0 items</span>
+  <button onclick="sendWhatsApp()">📩 Order on WhatsApp</button>
+</div>
 
-<script>
-  let order = [];
-
-  function addItem(item) {
-    order.push(item);
-    alert(item + " added");
-  }
-
-  function sendWhatsApp() {
-    if (order.length === 0) {
-      alert("Please add items to order");
-      return;
-    }
-
-    let message = "New Order:%0A";
-    order.forEach((item, index) => {
-      message += (index + 1) + ". " + item + "%0A";
-    });
-
-    let phoneNumber = "6300289099"; // OWNER WHATSAPP NUMBER
-    let url = "https://wa.me/" + phoneNumber + "?text=" + message;
-
-    window.open(url, "_blank");
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
