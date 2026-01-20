@@ -8,59 +8,68 @@
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="overlay">
-      <h1>Bawarchi</h1>
-      <p>Hyderabadi Style Biryani</p>
-      <a href="tel:9876543210" class="call-btn">📞 Call Restaurant</a>
+<header class="hero">
+  <div class="overlay">
+    <h1>Bawarchi</h1>
+    <p>Hyderabadi Style Biryani</p>
+    <button class="wa-btn" onclick="sendWhatsApp()">📩 Order on WhatsApp</button>
+  </div>
+</header>
+
+<main class="menu">
+
+  <section>
+    <h2>🍗 Biryani</h2>
+
+    <div class="item">
+      <span>Chicken Dum Biryani</span>
+      <button onclick="addItem('Chicken Dum Biryani')">Add</button>
     </div>
-  </header>
 
-  <!-- MENU -->
-  <main class="menu">
+    <div class="item">
+      <span>Mutton Biryani</span>
+      <button onclick="addItem('Mutton Biryani')">Add</button>
+    </div>
 
-    <section>
-      <h2>🥗 Starters</h2>
-      <div class="item">
-        <span>Veg Manchurian</span><span>₹120</span>
-      </div>
-      <div class="item">
-        <span>Chicken 65</span><span>₹180</span>
-      </div>
-    </section>
+    <div class="item">
+      <span>Veg Biryani</span>
+      <button onclick="addItem('Veg Biryani')">Add</button>
+    </div>
 
-    <section>
-      <h2>🍛 Curries</h2>
-      <div class="item">
-        <span>Paneer Butter Masala</span><span>₹200</span>
-      </div>
-      <div class="item">
-        <span>Chicken Curry</span><span>₹230</span>
-      </div>
-    </section>
+  </section>
 
-    <section>
-      <h2>🍗 Biryani (Hyderabadi)</h2>
-      <div class="item highlight">
-        <span>Chicken Dum Biryani</span><span>₹250</span>
-      </div>
-      <div class="item">
-        <span>Mutton Biryani</span><span>₹320</span>
-      </div>
-      <div class="item">
-        <span>Veg Biryani</span><span>₹160</span>
-      </div>
-    </section>
+</main>
 
-  </main>
+<footer>
+  <p>📍 Your Town • Main Road</p>
+  <p>Scan QR • Order via WhatsApp</p>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>📍 Your Town • Main Road</p>
-    <p>Scan QR • Enjoy Authentic Taste</p>
-  </footer>
+<script>
+  let order = [];
+
+  function addItem(item) {
+    order.push(item);
+    alert(item + " added");
+  }
+
+  function sendWhatsApp() {
+    if (order.length === 0) {
+      alert("Please add items to order");
+      return;
+    }
+
+    let message = "New Order:%0A";
+    order.forEach((item, index) => {
+      message += (index + 1) + ". " + item + "%0A";
+    });
+
+    let phoneNumber = "6300289099"; // OWNER WHATSAPP NUMBER
+    let url = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+    window.open(url, "_blank");
+  }
+</script>
 
 </body>
 </html>
-
