@@ -1,4 +1,4 @@
-const OWNER_PHONE = "919876543210"; // replace with owner's WhatsApp number
+const OWNER_PHONE = "916300289099"; // replace with owner's WhatsApp number
 let order = {};
 
 function addItem(item) {
